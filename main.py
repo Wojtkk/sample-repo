@@ -128,9 +128,10 @@ def main():
     
     # 9. Final summary
     print_section("9. Final Summary")
+    final_report = tech_shop.get_revenue_report()
     print(f"Shop: {tech_shop}")
     print(f"  Inventory items: {len(tech_shop.inventory)}")
-    print(f"  Total sales: {report['total_sales']}")
+    print(f"  Total sales: {final_report['total_sales']}")
     print(f"  Revenue: ${tech_shop.revenue:.2f}")
     
     print(f"\nWarehouse: {warehouse}")

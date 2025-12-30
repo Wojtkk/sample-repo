@@ -72,6 +72,11 @@ class Shop:
         """
         print(f"[Shop {self.name}] Ordering {quantity}x product {product_id} from {magazine.name}")
         
+        # Check if product exists in magazine catalog
+        if product_id not in magazine.catalog:
+            print(f"[Shop {self.name}] Product {product_id} not available in {magazine.name}")
+            return False
+        
         # Magazine fulfills the order
         if magazine.fulfill_order(self, product_id, quantity):
             # Add products to shop inventory
